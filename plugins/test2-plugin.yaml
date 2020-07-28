@@ -1,0 +1,20 @@
+kind: "EntandoPlugin"
+apiVersion: "entando.org/v1"
+metadata:
+  name: "test2-plugin"
+spec:
+  image: scael/test-2:0.0.1-SNAPSHOT
+  replicas: 1
+  dbms: postgresql
+  parameters: {}
+  ingressPath: "/test2"
+  healthCheckPath: "/management/health"
+  securityLevel: "strict"
+  connectionConfigNames: []
+  permissions: []
+  roles:
+  - name: test2-admin
+    code: test2-admin
+  - name: conference-admin
+    code: "conference-admin"
+# entando-needle-descriptor-add-roles - Entando blueprint will add roles here
